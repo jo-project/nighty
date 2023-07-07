@@ -1,0 +1,7 @@
+# --> Tokyonight (Night)
+thm_bg = "#16161e"
+thm_bgdark = "#15161e"
+thm_fg = "#3b4261"
+thm_fgdark = "#a9b1d6"
+thm_blue = "#7aa2f7"
+thm_yellow = "#e0af68"

@@ -1,35 +1,86 @@
 #!/usr/bin/env bash
 
-# Tokyonight Tmux
+PLUGIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEFAULT_STATUS_LINE_FILE=src/default.conf
 
-tmux set-option -g mode-style "fg=#82aaff,bg=#3b4261"
+get_tmux_option() {
+    local option value default
+    option="$1"
+    default="$2"
+    value="$(tmux show-option -gqv "$option")"
 
-tmux set-option -g message-style "fg=#82aaff,bg=#3b4261"
-tmux set-option -g message-command-style "fg=#82aaff,bg=#3b4261"
+    if [ -n "$value" ]; then
+        echo "$value"
+    else
+        echo "$default"
+    fi
+}
 
-tmux set-option -g pane-border-style "fg=#3b4261"
-tmux set-option -g pane-active-border-style "fg=#82aaff"
+set() {
+    local option=$1
+    local value=$2
+    tmux_commands+=(set-option -gq "$option" "$value" ";")
+}
 
-tmux set-option -g status "on"
-tmux set-option -g status-justify "left"
+setw() {
+    local option=$1
+    local value=$2
+    tmux_commands+=(set-window-option -gq "$option" "$value" ";")
+}
 
-tmux set-option -g status-style "fg=#82aaff,bg=#1e2030"
+main() {
+    local theme
+    theme="$(get_tmux_option "@nighty_flavour" "moon")"
 
-tmux set-option -g status-left-length "100"
-tmux set-option -g status-right-length "100"
+    local tmux_commands=()
 
-tmux set-option -g status-left-style NONE
-tmux set-option -g status-right-style NONE
+    source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/nighty-${theme}.tmuxtheme")"
 
-tmux set-option -g status-left "#[fg=#1b1d2b,bg=#82aaff,bold] #S #[fg=#82aaff,bg=#1e2030,nobold,nounderscore,noitalics]"
-tmux set-option -g status-right "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#1e2030] #{prefix_highlight} #[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261] %Y-%m-%d  %I:%M %p #[fg=#82aaff,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#1b1d2b,bg=#82aaff,bold]  #{b:pane_current_path} "
+    source "$PLUGIN_DIR/$DEFAULT_STATUS_LINE_FILE"
 
-tmux set-window-option -g window-status-activity-style "underscore,fg=#828bb8,bg=#1e2030"
-tmux set-window-option -g window-status-separator ""
-tmux set-window-option -g window-status-style "NONE,fg=#828bb8,bg=#1e2030"
-tmux set-window-option -g window-status-format "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]"
-tmux set-window-option -g window-status-current-format "#[fg=#1e2030,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261,bold] #I  #W #F #[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]"
+    set status "on"
+    set status-justify "left"
+    set status-left-length "100"
+    set status-right-length "100"
+    set status-style "fg=${thm_blue},bg=${thm_bg}"
+    set status-left-style NONE
+    set status-right-style NONE
 
-# tmux-plugins/tmux-prefix-highlight support
-tmux set-option -g @prefix_highlight_output_prefix "#[fg=#ffc777]#[bg=#1e2030]#[fg=#1e2030]#[bg=#ffc777]"
-tmux set-option -g @prefix_highlight_output_suffix ""
+    # Mode
+    set mode-style "fg=${thm_blue},bg=${thm_fg}"
+
+    # Messages
+    set message-style "fg=${thm_blue},bg=${thm_fg}"
+    set message-command-style "fg=${thm_blue},bg=${thm_fg}"
+
+    # Panes
+    set pane-border-style "fg=${thm_fg}"
+    set pane-active-border-style "fg=${thm_blue}"
+
+    # Windows
+    setw window-status-activity-style "underscore,fg=${thm_fgdark},bg=${thm_bg}"
+    setw window-status-separator ""
+    setw window-status-style "NONE,fg=${thm_fgdark},bg=${thm_bg}"
+
+    local window_status_format=$show_window_in_window_status
+    local window_status_current_format=$show_window_in_window_status_current
+
+    setw window-status-format "${window_status_format}"
+    setw window-status-current-format "${window_status_current_format}"
+
+    local status_left=$show_session
+    local status_right=$show_directory
+
+    set status-left "${status_left}"
+    set status-right "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_bg}] #{prefix_highlight} #[fg=${thm_fg},bg=${thm_bg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_fg}] %Y-%m-%d  %I:%M %p #[fg=${thm_blue},bg=${thm_fg},nobold,nounderscore,noitalics]${status_right}"
+
+    local highlight_suf=$show_highlight_suffix
+    local highlight_pref=$show_highlight_prefix
+
+    set @prefix_highlight_output_prefix "${highlight_pref}"
+    set @prefix_highlight_output_suffix "${highlight_suf}"
+
+    tmux "${tmux_commands[@]}"
+}
+
+main "$@"
