@@ -2,11 +2,7 @@
 
 PLUGIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-while IFS='=' read -r key value; do
-  if [[ $key != \#* ]]; then
-    export "$key"="$value"
-  fi
-done < "${PLUGIN_DIR}/nighty-moon.tmuxtheme"
+source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/nighty-moon.tmuxtheme")"
 
 tmux set-option -g status "on"
 tmux set-option -g status-justify "left"

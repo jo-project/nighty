@@ -1,7 +1,7 @@
 # --> Tokyonight (Moon)
-thm_bg = "#1e2030"
-thm_bgdark = "#1b1d2b"
-thm_fg = "#3b4261"
-thm_fgdark = "#828bb8"
-thm_blue = "#82aaff"
-thm_yellow = "#ffc777"
+thm_bg="#1e2030"
+thm_bgdark="#1b1d2b"
+thm_fg="#3b4261"
+thm_fgdark="#828bb8"
+thm_blue="#82aaff"
+thm_yellow="#ffc777"
