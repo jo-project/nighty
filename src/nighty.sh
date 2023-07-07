@@ -38,4 +38,4 @@ main() {
     tmux set-option -g @prefix_highlight_output_suffix ""
 }
 
-mains
+main
