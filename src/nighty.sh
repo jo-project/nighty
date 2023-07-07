@@ -33,7 +33,7 @@ main() {
 
     local tmux_commands=()
 
-    source $current_dir/nighty-$theme.tmuxtheme
+    source $current_dir/themes/nighty-$theme.tmuxtheme
 
     set status "on"
     set status-justify "left"
