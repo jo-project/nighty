@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
 current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source $current_dir/nighty-moon.tmuxtheme
+
+get_tmux_option() {
+    local option value default
+    option="$1"
+    default="$2"
+    value="$(tmux show-option -gqv "$option")"
+
+    if [ -n "$value" ]; then
+        echo "$value"
+    else
+        echo "$default"
+    fi
+}
 
 set() {
     local option=$1
@@ -16,7 +28,12 @@ setw() {
 }
 
 main() {
+    local theme
+    theme="$(get_tmux_option "@nighty_flavour" "moon")"
+
     local tmux_commands=()
+
+    source $current_dir/nighty-$theme.tmuxtheme
 
     set status "on"
     set status-justify "left"
