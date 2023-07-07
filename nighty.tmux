@@ -18,13 +18,13 @@ get_tmux_option() {
 set() {
     local option=$1
     local value=$2
-    tmux_commands+=(set-option -gq "$option" "$value" ";")
+    tmux_commands+=(set-option -g "$option" "$value" ";")
 }
 
 setw() {
     local option=$1
     local value=$2
-    tmux_commands+=(set-window-option -gq "$option" "$value" ";")
+    tmux_commands+=(set-window-option -g "$option" "$value" ";")
 }
 
 main() {
