@@ -13,7 +13,7 @@ tmux set-option -g status-left-style NONE
 tmux set-option -g status-right-style NONE
 
 # Mode
-tmux set-option -g-option -g mode-style "fg=${thm_blue},bg=${thm_fg}"
+tmux set-option -g mode-style "fg=${thm_blue},bg=${thm_fg}"
 
 # Messages
 tmux set-option -g message-style "fg=${thm_blue},bg=${thm_fg}"
@@ -24,11 +24,11 @@ tmux set-option -g pane-border-style "fg=${thm_fg}"
 tmux set-option -g pane-active-border-style "fg=${thm_blue}"
 
 # Windows
-tmux set-window-option -g window-status-activity-style "underscore,fg=${thm_fgdark},bg=${thm_bg}"
-tmux set-window-option -g window-status-separator ""
-tmux set-window-option -g window-status-style "NONE,fg=${thm_fgdark},bg=${thm_bg}"
-tmux set-window-option -g window-status-format "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]"
-tmux set-window-option -g window-status-current-format "#[fg=${thm_bg},bg=${thm_fg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_fg},bold] #I  #W #F #[fg=${thm_fg},bg=${thm_bg},nobold,nounderscore,noitalics]"
+tmux set-option -g window-status-activity-style "underscore,fg=${thm_fgdark},bg=${thm_bg}"
+tmux set-option -g window-status-separator ""
+tmux set-option -g window-status-style "NONE,fg=${thm_fgdark},bg=${thm_bg}"
+tmux set-option -g window-status-format "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]"
+tmux set-option -g window-status-current-format "#[fg=${thm_bg},bg=${thm_fg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_fg},bold] #I  #W #F #[fg=${thm_fg},bg=${thm_bg},nobold,nounderscore,noitalics]"
 
 tmux set-option -g status-left "#[fg=${thm_bgdark},bg=${thm_blue},bold] #S #[fg=${thm_blue},bg=${thm_bg},nobold,nounderscore,noitalics]"
 
