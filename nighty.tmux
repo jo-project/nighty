@@ -2,7 +2,7 @@
 
 PLUGIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source /dev/stdin <<<"$(sed -e "/^[^#].*=/s/^/local /" "${PLUGIN_DIR}/nighty-moon.tmuxtheme")"
+source "${PLUGIN_DIR}/nighty-moon.tmuxtheme"
 
 tmux set-option -g status "on"
 tmux set-option -g status-justify "left"
