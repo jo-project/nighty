@@ -13,7 +13,7 @@ tmux set-option -g status-left-style NONE
 tmux set-option -g status-right-style NONE
 
 # Mode
-tmux tmux set-option -g-option -g mode-style "fg=${thm_blue},bg=${thm_fg}"
+tmux set-option -g-option -g mode-style "fg=${thm_blue},bg=${thm_fg}"
 
 # Messages
 tmux set-option -g message-style "fg=${thm_blue},bg=${thm_fg}"
