@@ -54,8 +54,8 @@ main() {
     set  status-left-style NONE
     set  status-right-style NONE
 
-    set  status-left "#[fg=#1E1E2E,bg=#89b4fa,bold] #S #[fg=#1e1e2e,bg=#181825,nobold,nounderscore,noitalics]"
-    set  status-right "#[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]#[fg=#1e1e2e,bg=#181825] #{prefix_highlight} #[fg=#cba6f7,bg=#181825,nobold,nounderscore,noitalics]#[fg=#1e1e2e,bg=#cba6f7] %Y-%m-%d  %I:%M %p #[fg=#1e1e2e,bg=#cba6f7,nobold,nounderscore,noitalics]#[fg=#1E1E2E,bg=#89b4fa,bold]  #{b:pane_current_path} "
+    set  status-left "#[fg=#1E1E2E,bg=#89b4fa,bold] #S #[fg=#89b4fa,bg=#181825,nobold,nounderscore,noitalics]"
+    set  status-right "#[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]#[fg=#1e1e2e,bg=#181825] #{prefix_highlight} #[fg=#cba6f7,bg=#181825,nobold,nounderscore,noitalics]#[fg=#1e1e2e,bg=#cba6f7] %Y-%m-%d  %I:%M %p #[fg=#89b4fa,bg=#cba6f7,nobold,nounderscore,noitalics]#[fg=#1E1E2E,bg=#89b4fa,bold]  #{b:pane_current_path} "
 
     setw  window-status-activity-style "NONE,fg=#cdd6f4,bg=#181825"
     setw  window-status-separator ""
