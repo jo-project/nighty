@@ -35,10 +35,10 @@ main() {
 
     source $current_dir/themes/nighty-$theme.tmuxtheme
 
-    set  mode-style "fg=#89b4fa,bg=#3b4261"
+    set  mode-style "fg=#89b4fa,bg=#11111b"
 
-    set  message-style "fg=#89b4fa,bg=#3b4261"
-    set  message-command-style "fg=#89b4fa,bg=#3b4261"
+    set  message-style "fg=#89b4fa,bg=#11111b"
+    set  message-command-style "fg=#89b4fa,bg=#11111b"
 
     set  pane-border-style "fg=#3b4261"
     set  pane-active-border-style "fg=#89b4fa"
