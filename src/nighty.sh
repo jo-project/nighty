@@ -51,7 +51,7 @@ main() {
     set message-command-style "fg=${thm_blue},bg=${thm_bg}"
 
     # Panes
-    set pane-border-style "fg=${thm_bg}"
+    set pane-border-style "fg=${thm_bgdark}"
     set pane-active-border-style "fg=${thm_blue}"
 
     # Windows
