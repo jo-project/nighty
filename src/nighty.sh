@@ -40,7 +40,7 @@ main() {
     set  message-style "fg=#1e1e2e,bg=#cba6f7"
     set  message-command-style "fg=#1e1e2e,bg=#cba6f7"
 
-    set  pane-border-style "fg=#cba6f7"
+    set  pane-border-style "fg=#89b4fa"
     set  pane-active-border-style "fg=#1e1e2e"
 
     set  status "on"
