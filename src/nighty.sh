@@ -35,38 +35,37 @@ main() {
 
     source $current_dir/themes/nighty-$theme.tmuxtheme
 
-    set status "on"
-    set status-justify "left"
-    set status-left-length "100"
-    set status-right-length "100"
-    set status-style "fg=#82aaff,bg=#1e2030"
-    set status-left-style NONE
-    set status-right-style NONE
+    set  mode-style "fg=#82aaff,bg=#3b4261"
 
-    # Mode
-    set mode-style "fg=${thm_blue},bg=${thm_fg}"
+    set  message-style "fg=#82aaff,bg=#3b4261"
+    set  message-command-style "fg=#82aaff,bg=#3b4261"
 
-    # Messages
-    set message-style "fg=${thm_blue},bg=${thm_fg}"
-    set message-command-style "fg=${thm_blue},bg=${thm_fg}"
+    set  pane-border-style "fg=#3b4261"
+    set  pane-active-border-style "fg=#82aaff"
 
-    # Panes
-    set pane-border-style "fg=${thm_fg}"
-    set pane-active-border-style "fg=${thm_blue}"
+    set  status "on"
+    set  status-justify "left"
 
-    # Windows
-    setw window-status-activity-style "underscore,fg=${thm_fgdark},bg=${thm_bg}"
-    setw window-status-separator ""
-    setw window-status-style "NONE,fg=${thm_fgdark},bg=${thm_bg}"
-    setw window-status-format "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]"
-    setw window-status-current-format "#[fg=${thm_bg},bg=${thm_fg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_bgdark},bold] #I  #W #F #[fg=${thm_bgdark},bg=${thm_bg},nobold,nounderscore,noitalics]"
+    set  status-style "fg=#82aaff,bg=#1e2030"
 
-    set status-left "#[fg=${thm_bgdark},bg=${thm_blue},bold] #S #[fg=${thm_blue},bg=${thm_bg},nobold,nounderscore,noitalics]"
+    set  status-left-length "100"
+    set  status-right-length "100"
 
-    set status-right "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_bg}] #{prefix_highlight} #[fg=${thm_fg},bg=${thm_bg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_fg}] %Y-%m-%d  %I:%M %p #[fg=${thm_blue},bg=${thm_fg},nobold,nounderscore,noitalics]#[fg=${thm_bgdark},bg=${thm_blue},bold]  #{b:pane_current_path} "
+    set  status-left-style NONE
+    set  status-right-style NONE
 
-    set @prefix_highlight_output_prefix "#[fg=${thm_yellow}]#[bg=${thm_bg}]#[fg=${thm_bg}]#[bg=${thm_yellow}]"
-    set @prefix_highlight_output_suffix ""
+    set  status-left "#[fg=#1b1d2b,bg=#82aaff,bold] #S #[fg=#82aaff,bg=#1e2030,nobold,nounderscore,noitalics]"
+    set  status-right "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#1e2030] #{prefix_highlight} #[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261] %Y-%m-%d  %I:%M %p #[fg=#82aaff,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#1b1d2b,bg=#82aaff,bold] #h "
+
+    setw  window-status-activity-style "underscore,fg=#828bb8,bg=#1e2030"
+    setw  window-status-separator ""
+    setw  window-status-style "NONE,fg=#828bb8,bg=#1e2030"
+    setw  window-status-format "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]"
+    setw  window-status-current-format "#[fg=#1e2030,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261,bold] #I  #W #F #[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]"
+
+    # tmux-plugins/tmux-prefix-highlight support
+    set  @prefix_highlight_output_prefix "#[fg=#ffc777]#[bg=#1e2030]#[fg=#1e2030]#[bg=#ffc777]"
+    set  @prefix_highlight_output_suffix "" 
 
     tmux "${tmux_commands[@]}"
 }
