@@ -35,12 +35,12 @@ main() {
 
     source $current_dir/themes/nighty-$theme.tmuxtheme
 
-    set  mode-style "fg=#89b4fa,bg=#11111b"
+    set  mode-style "fg=#89b4fa,bg=#cba6f7"
 
-    set  message-style "fg=#89b4fa,bg=#11111b"
-    set  message-command-style "fg=#89b4fa,bg=#11111b"
+    set  message-style "fg=#89b4fa,bg=#cba6f7"
+    set  message-command-style "fg=#89b4fa,bg=#cba6f7"
 
-    set  pane-border-style "fg=#11111b"
+    set  pane-border-style "fg=#cba6f7"
     set  pane-active-border-style "fg=#89b4fa"
 
     set  status "on"
@@ -55,13 +55,13 @@ main() {
     set  status-right-style NONE
 
     set  status-left "#[fg=#1E1E2E,bg=#89b4fa,bold] #S #[fg=#89b4fa,bg=#181825,nobold,nounderscore,noitalics]"
-    set  status-right "#[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#181825] #{prefix_highlight} #[fg=#11111b,bg=#181825,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#11111b] %Y-%m-%d  %I:%M %p #[fg=#89b4fa,bg=#11111b,nobold,nounderscore,noitalics]#[fg=#1E1E2E,bg=#89b4fa,bold]  #{b:pane_current_path} "
+    set  status-right "#[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#181825] #{prefix_highlight} #[fg=#cba6f7,bg=#181825,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#cba6f7] %Y-%m-%d  %I:%M %p #[fg=#89b4fa,bg=#cba6f7,nobold,nounderscore,noitalics]#[fg=#1E1E2E,bg=#89b4fa,bold]  #{b:pane_current_path} "
 
     setw  window-status-activity-style "NONE,fg=#cdd6f4,bg=#181825"
     setw  window-status-separator ""
     setw  window-status-style "NONE,fg=#cdd6f4,bg=#181825"
     setw  window-status-format "#[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#181825,bg=#181825,nobold,nounderscore,noitalics]"
-    setw  window-status-current-format "#[fg=#181825,bg=#11111b,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#11111b,bold] #I  #W #F #[fg=#11111b,bg=#181825,nobold,nounderscore,noitalics]"
+    setw  window-status-current-format "#[fg=#181825,bg=#cba6f7,nobold,nounderscore,noitalics]#[fg=#89b4fa,bg=#cba6f7,bold] #I  #W #F #[fg=#cba6f7,bg=#181825,nobold,nounderscore,noitalics]"
 
     # tmux-plugins/tmux-prefix-highlight support
     set  @prefix_highlight_output_prefix "#[fg=#ffc777]#[bg=#181825]#[fg=#181825]#[bg=#ffc777]"
