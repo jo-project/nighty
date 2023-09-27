@@ -39,19 +39,19 @@ main() {
     set status-justify "left"
     set status-left-length "100"
     set status-right-length "100"
-    set status-style "fg=${thm_blue},bg=${thm_bg}"
+    set status-style "fg=${thm_blue},bg=${thm_bgdark}"
     set status-left-style NONE
     set status-right-style NONE
 
     # Mode
-    set mode-style "fg=${thm_blue},bg=${thm_bg}"
+    set mode-style "fg=${thm_blue},bg=${thm_bgdark}"
 
     # Messages
-    set message-style "fg=${thm_blue},bg=${thm_bg}"
-    set message-command-style "fg=${thm_blue},bg=${thm_bg}"
+    set message-style "fg=${thm_blue},bg=${thm_bgdark}"
+    set message-command-style "fg=${thm_blue},bg=${thm_bgdark}"
 
     # Panes
-    set pane-border-style "fg=${thm_fg}"
+    set pane-border-style "fg=${thm_bg}"
     set pane-active-border-style "fg=${thm_blue}"
 
     # Windows
