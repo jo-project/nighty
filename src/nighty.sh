@@ -46,7 +46,7 @@ main() {
     set  status "on"
     set  status-justify "left"
 
-    set  status-style "fg=#82aaff,bg=#1e2030"
+    set  status-style "fg=#82aaff,bg=#181825"
 
     set  status-left-length "100"
     set  status-right-length "100"
