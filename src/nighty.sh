@@ -59,7 +59,7 @@ main() {
     setw window-status-separator ""
     setw window-status-style "NONE,fg=${thm_fgdark},bg=${thm_bg}"
     setw window-status-format "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]"
-    setw window-status-current-format "#[fg=${thm_bg},bg=${thm_fg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_bgdark},bold] #I  #W #F #[fg=${thm_bgdark},bg=${thm_bg},nobold,nounderscore,noitalics]"
+    setw window-status-current-format "#[fg=${thm_bg},bg=${thm_bg},nobold,nounderscore,noitalics]#[fg=${thm_blue},bg=${thm_bgdark},bold] #I  #W #F #[fg=${thm_bgdark},bg=${thm_bg},nobold,nounderscore,noitalics]"
 
     set status-left "#[fg=${thm_bgdark},bg=${thm_blue},bold] #S #[fg=${thm_blue},bg=${thm_bg},nobold,nounderscore,noitalics]"
 
